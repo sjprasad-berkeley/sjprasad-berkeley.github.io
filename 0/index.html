@@ -34,13 +34,88 @@
             font-size: 1.1rem;
             margin-bottom: 2rem;
         }
+
+        .task-section {
+            margin-bottom: 3rem;
+        }
+
+        .task-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .image-item {
+            text-align: center;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .image-item img:hover {
+            transform: scale(1.02);
+        }
+
+        .image-caption {
+            margin-top: 0.5rem;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <a href="../index.html" class="back-link">← Back to Portfolio</a>
     <div class="content">
         <h1 class="project-title">Project 0</h1>
-        <p class="project-description">blah blah</p>
+        <p class="project-description">Becoming Friends with Your Camera</p>
+        
+        <div class="task-section">
+            <h2 class="task-title">Task 1</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/Task1-1.jpeg" alt="Task 1 Image 1">
+                    <div class="image-caption">Task1-1</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/Task1-2.jpeg" alt="Task 1 Image 2">
+                    <div class="image-caption">Task1-2</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/Task1-3.jpeg" alt="Task 1 Image 3">
+                    <div class="image-caption">Task1-3</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/Task1-4.jpeg" alt="Task 1 Image 4">
+                    <div class="image-caption">Task1-4</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/Task1-5.jpeg" alt="Task 1 Image 5">
+                    <div class="image-caption">Task1-5</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/Task1-6.jpeg" alt="Task 1 Image 6">
+                    <div class="image-caption">Task1-6</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/Task1-7.jpeg" alt="Task 1 Image 7">
+                    <div class="image-caption">Task1-7</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
