@@ -49,7 +49,7 @@
 
         .image-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
         }
@@ -63,18 +63,17 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s ease;
         }
 
-        .image-item img:hover {
-            transform: scale(1.02);
+        .gif-item {
+            text-align: left;
         }
 
-        .image-caption {
-            margin-top: 0.5rem;
-            color: #6c757d;
-            font-size: 0.9rem;
+        .gif-item img {
+            max-width: 400px;
+            width: 100%;
         }
+
     </style>
 </head>
 <body>
@@ -84,35 +83,49 @@
         <p class="project-description">Becoming Friends with Your Camera</p>
         
         <div class="task-section">
-            <h2 class="task-title">Task 1</h2>
+            <h2 class="task-title">Task 1 -  Selfie: The Wrong Way vs. The Right Way</h2>
             <div class="image-gallery">
                 <div class="image-item">
                     <img src="images/Task1-1.jpeg" alt="Task 1 Image 1">
-                    <div class="image-caption">Task1-1</div>
                 </div>
                 <div class="image-item">
                     <img src="images/Task1-2.jpeg" alt="Task 1 Image 2">
-                    <div class="image-caption">Task1-2</div>
                 </div>
                 <div class="image-item">
                     <img src="images/Task1-3.jpeg" alt="Task 1 Image 3">
-                    <div class="image-caption">Task1-3</div>
                 </div>
                 <div class="image-item">
                     <img src="images/Task1-4.jpeg" alt="Task 1 Image 4">
-                    <div class="image-caption">Task1-4</div>
                 </div>
                 <div class="image-item">
                     <img src="images/Task1-5.jpeg" alt="Task 1 Image 5">
-                    <div class="image-caption">Task1-5</div>
                 </div>
                 <div class="image-item">
                     <img src="images/Task1-6.jpeg" alt="Task 1 Image 6">
-                    <div class="image-caption">Task1-6</div>
                 </div>
                 <div class="image-item">
                     <img src="images/Task1-7.jpeg" alt="Task 1 Image 7">
-                    <div class="image-caption">Task1-7</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 2 - Architectural Perspective Compression</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/Task2-1.jpeg" alt="Task 2 Image 1">
+                </div>
+                <div class="image-item">
+                    <img src="images/Task2-2.jpeg" alt="Task 2 Image 2">
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 3 - Architectural Perspective Compression</h2>
+            <div class="image-gallery">
+                <div class="image-item gif-item">
+                    <img src="images/Task3-1.gif" alt="Task 3 GIF">
                 </div>
             </div>
         </div>
