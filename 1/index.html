@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 1 - Images of the Russian Empire: Colorizing the Prokudin-Gorskii photo collection</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #0056b3;
+        }
+
+        .content {
+            max-width: 1400px;
+        }
+
+        .project-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .task-section {
+            margin-bottom: 3rem;
+        }
+
+        .task-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .image-item {
+            text-align: center;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+            font-size: 0.6rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .image-name {
+            font-weight: bold;
+            font-size: 0.7rem;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
+        }
+
+        .gif-item {
+            text-align: left;
+        }
+
+        .gif-item img {
+            max-width: 400px;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    <div class="content">
+        <h1 class="project-title">Project 1</h1>
+        <p class="project-description">Images of the Russian Empire: Colorizing the Prokudin-Gorskii photo collection</p>
+        
+        <div class="task-section">
+            <h2 class="task-title">Task 1 - Provided Dataset (Single-Scale)</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/aligned_ncc_cathedral.jpg" alt="Cathedral">
+                    <div class="image-name">Cathedral</div>
+                    <div class="image-caption">green displacement: (2, 5)<br>red displacement: (3, 12)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_monastery.jpg" alt="Monastery">
+                    <div class="image-name">Monastery</div>
+                    <div class="image-caption">green displacement: (2, -3)<br>red displacement: (2, 3)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_tobolsk.jpg" alt="Tobolsk">
+                    <div class="image-name">Tobolsk</div>
+                    <div class="image-caption">green displacement: (2, 3)<br>red displacement: (3, 6)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 2 - Provided Dataset (Multi-Scale)</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/aligned_ncc_cathedral.jpg" alt="Cathedral">
+                    <div class="image-name">Cathedral</div>
+                    <div class="image-caption">green displacement: (2, 5)<br>red displacement: (3, 12)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_monastery.jpg" alt="Monastery">
+                    <div class="image-name">Monastery</div>
+                    <div class="image-caption">green displacement: (2, -3)<br>red displacement: (2, 3)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_tobolsk.jpg" alt="Tobolsk">
+                    <div class="image-name">Tobolsk</div>
+                    <div class="image-caption">green displacement: (2, 3)<br>red displacement: (3, 6)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_church.jpg" alt="Church">
+                    <div class="image-name">Church</div>
+                    <div class="image-caption">green displacement: (3, 25)<br>red displacement: (-5, 58)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_emir.jpg" alt="Emir">
+                    <div class="image-name">Emir</div>
+                    <div class="image-caption">green displacement: (24, 49)<br>red displacement: (43, 103)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_harvesters.jpg" alt="Harvesters">
+                    <div class="image-name">Harvesters</div>
+                    <div class="image-caption">green displacement: (16, 60)<br>red displacement: (14, 124)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_icon.jpg" alt="Icon">
+                    <div class="image-name">Icon</div>
+                    <div class="image-caption">green displacement: (17, 40)<br>red displacement: (23, 89)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_italil.jpg" alt="Italil">
+                    <div class="image-name">Italil</div>
+                    <div class="image-caption">green displacement: (21, 38)<br>red displacement: (35, 77)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_lastochikino.jpg" alt="Lastochikino">
+                    <div class="image-name">Lastochikino</div>
+                    <div class="image-caption">green displacement: (-2, -3)<br>red displacement: (-9, 76)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_lugano.jpg" alt="Lugano">
+                    <div class="image-name">Lugano</div>
+                    <div class="image-caption">green displacement: (-17, 41)<br>red displacement: (-28, 92)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_melons.jpg" alt="Melons">
+                    <div class="image-name">Melons</div>
+                    <div class="image-caption">green displacement: (9, 82)<br>red displacement: (11, 177)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_self_portrait.jpg" alt="Self Portrait">
+                    <div class="image-name">Self Portrait</div>
+                    <div class="image-caption">green displacement: (29, 79)<br>red displacement: (34, 175)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_siren.jpg" alt="Siren">
+                    <div class="image-name">Siren</div>
+                    <div class="image-caption">green displacement: (-7, 49)<br>red displacement: (-25, 96)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_three_generations.jpg" alt="Three Generations">
+                    <div class="image-name">Three Generations</div>
+                    <div class="image-caption">green displacement: (13, 55)<br>red displacement: (10, 112)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 3 - My Chosen Images</h2>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/aligned_ncc_oranzhereie.jpg" alt="Oranzhereie">
+                    <div class="image-name">Oranzhereie</div>
+                    <div class="image-caption">green displacement: (29, 60)<br>red displacement: (35, 127)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_peony.jpg" alt="Peony">
+                    <div class="image-name">Peony</div>
+                    <div class="image-caption">green displacement: (3, 51)<br>red displacement: (-6, 104)</div>
+                </div>
+                <div class="image-item">
+                    <img src="images/aligned_ncc_pavla.jpg" alt="Pavla">
+                    <div class="image-name">Pavla</div>
+                    <div class="image-caption">green displacement: (-11, 25)<br>red displacement: (-18, 96)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 4 - Overview and Approach</h2>
+            <p>This project aligns and colorizes images from the Prokudin-Gorskii photo collection. The raw photos were captured through a technique where the scene was seen through red, blue, and green filters as grayscale images. When properly aligned, these images create a full-color version. The challenge lies in the fact that camera movements or subject movements misalign the three photos with each other, requiring a computational approach to alignment.</p>
+            <br>
+            <p>The alignment algorithm performs a search over possible displacements to find the best match between two image channels. The process works as follows: First, the displacement search window is defined, around 5% of image dimensions, to account for the possible misalignment. Then, the border is cropped from the image to exclude the artifacts in the border. For each potential displacement in the search range, one of the images is shifted relative to the other in a circular manner. Then, a similarity metric (L2-norm or Normalized-Cross_Correlation) is computed between the aligned regions between the images. We choose the displacement that produces the highest similarity score. This single-scale approach works well for small images, but for larger images, the computation time explodes since the search space grows quadratically.</p>
+            <br>
+            <p>For larger images, a technique called multi-scale alignment, or pyramid-alignment, is used. During this process, images are recursively downsampled, with a base case of single-scale alignment once they go below a certain image size. Once the optimal single-scale alignment displacement is found, we scale the displacement up to the next pyramid level, and perform local refinement around the scaled displacement. Repeat this process until we get back to the original image size.</p>
+            <br>
+            <p>The implementation supports multiple similarity metrics, namely L2 distance (euclidean distance between image patches) and Normalized-Cross-Correlation (correlation between normalized image patches). NCC works better on some images, like Emir.</p>
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 5 - Challenges Encountered</h2>
+            <p>One challenge I ran into while trying to build out the pyramid alignment pipeline was the time it would take to go through each layer. It would take longer and longer each downscale, since we were doing an exhaustive search over all possible alignments. To combat this, I adopted an approach that only checks alignments that are within "refine" of the current location. This ensures that we are still aligning on every layer, but not incurring enormous time complexity by doing exhaustive search.</p>
+            <br>
+            <p>Another challenge I ran into was with some of the images not aligning correctly due to the borders messing up the algorithm. This was because I was initially cropping borders based on a fixed pixel amount from each side. This worked for small images, but for large images, this fixed width didn't cover the full border. I switched to a ratio-based approach, where I cut off x% of the image from each side. I empirically found that clipping 5% from each side provided the best results.</p>
+        </div>
+    </div>
+</body>
+</html>
