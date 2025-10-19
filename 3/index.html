@@ -168,6 +168,29 @@ Homography H (bed_1 -> bed_2):
             <img src="images/tree_mosaic_result.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
             <p>The procedure taken to create the image mosaic is as follows: we capture overlapping images from the same position while rotating the camera between shots. We select corresponding points between the images (by hand) and set up a system of equations. We solve this system using SVD to find the homography matrix H. We apply the homography transformation to map one image into the other image's coordinate system. We then use inverse warping to sample the pixel values to avoid gaps. We combine the warped images into a single mosaic, handling overlapping regions with weighted average with alpha masks.</p>
         </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task B.1 - Harris Corner Detection</h2>  
+            <img src="images/image_1_corners.png" alt="image" style="width: 100%; max-width: 1200px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task B.2 - Feature Descriptor Extraction</h2>
+            <img src="images/image_1_fds.png" alt="image" style="width: 100%; max-width: 1400px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task B.3 - Feature Matching</h2>  
+            <img src="images/feature_matching_20.png" alt="image" style="width: 100%; max-width: 1200px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task B.4 - RANSAC for Robust Homography</h2>  
+            <img src="images/inlier_matching_30.png" alt="image" style="width: 100%; max-width: 1200px; margin-top: 1rem;">
+            <img src="images/manual_auto_1.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">        
+            <img src="images/manual_auto_2.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">        
+            <img src="images/manual_auto_3.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">        
+        </div>
     </div>
 </body>
 </html>
