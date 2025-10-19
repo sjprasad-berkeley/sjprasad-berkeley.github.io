@@ -126,7 +126,7 @@
 
         <div class="task-section">
             <h2 class="task-title">Task A.2 - Recover Homographies</h2> 
-            <img src="images/bed_12.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+            <img src="images/bed_12.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
             <pre>
 Matrix A (Ah = 0, where h = [h11 h12 h13 h21 h22 h23 h31 h32 h33]^T):   
 [[-1.39569630e+02 -9.33170058e+02 -1.00000000e+00  0.00000000e+00 0.00000000e+00  0.00000000e+00  1.71209491e+05  1.14471587e+06 1.22669589e+03]
@@ -156,16 +156,16 @@ Homography H (bed_1 -> bed_2):
 
         <div class="task-section">
             <h2 class="task-title">Task A.3 - Warp the Images</h2>  
-            <img src="images/sign_rectified.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
-            <img src="images/cory_rectified.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+            <img src="images/sign_rectified.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+            <img src="images/cory_rectified.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
             <p>The bilinear warping has better quality when zooming in, as the artifacts are much smoother. However, this method also takes longer, but usually only 1.1x the time. This makes bilinear seem superior over nearest neighbors in most scenarios, and this is what I use moving forward.</p>
         </div>
 
         <div class="task-section">
             <h2 class="task-title">Task A.4 - Blend the Images into a Mosaic</h2>  
-            <img src="images/bed_mosaic_result.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
-            <img src="images/alley_mosaic_result.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
-            <img src="images/tree_mosaic_result.png" alt="image" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+            <img src="images/bed_mosaic_result.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+            <img src="images/alley_mosaic_result.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+            <img src="images/tree_mosaic_result.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
             <p>The procedure taken to create the image mosaic is as follows: we capture overlapping images from the same position while rotating the camera between shots. We select corresponding points between the images (by hand) and set up a system of equations. We solve this system using SVD to find the homography matrix H. We apply the homography transformation to map one image into the other image's coordinate system. We then use inverse warping to sample the pixel values to avoid gaps. We combine the warped images into a single mosaic, handling overlapping regions with weighted average with alpha masks.</p>
         </div>
 
