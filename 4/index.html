@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3 - [Auto]Stitching Photo Mosaics</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #0056b3;
+        }
+
+        .content {
+            max-width: 1400px;
+        }
+
+        .project-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .task-section {
+            margin-bottom: 3rem;
+        }
+
+        .task-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .image-item {
+            text-align: center;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+            font-size: 0.6rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .image-name {
+            font-weight: bold;
+            font-size: 0.7rem;
+            color: #2c3e50;
+            margin-bottom: 0.2rem;
+        }
+
+        .gif-item {
+            text-align: left;
+        }
+
+        .gif-item img {
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .code-block {
+            background-color: #e5e5e5;
+            color: #170056;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            padding: 1rem 1rem 1rem 0rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'Monaco', 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    <div class="content">
+        <h1 class="project-title">Project 4</h1>
+        <p class="project-description">Neural Radiance Field!</p>
+        
+        <div class="task-section">
+            <h2 class="task-title">Part 0.3 - Estimating Camera Pose</h2>  
+            <img src="images/4.0.3.1.png" alt="image" style="width: 100%; max-width: 500px; margin-top: 1rem;">
+            <img src="images/4.0.3.2.png" alt="image" style="width: 100%; max-width: 500px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 1 - Fit a Neural Field to a 2D Image</h2> 
+            <p>There are 5 linear layers in total (1 input layer, 3 hidden layers, 1 output layer). The width is 256. The learning rate is 1e-2. Some other important details are L=10 for positional encoding, 3000 training iterations, and 10000 batch size.</p>
+            <img src="images/4.1.1.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+            <img src="images/4.1.2.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+            <img src="images/4.1.3.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+            <img src="images/4.1.4.png" alt="image" style="width: 100%; max-width: 1600px; margin-top: 1rem;">
+
+        <div class="task-section">
+            <h2 class="task-title">Task 2.1-2.5 - Fit a Neural Radiance Field from Multi-view Images</h2>  
+            <p>To create rays from cameras, I first convert pixel coordinates to camera space using the camera intrinsics (K matrix). Then, the camera space points are transformed to world space using the c2w matrix. To sample points along rays, we use stratified sampling between the near and far values. We also add random perturbation for better training. With the ray dataset and dataloader, we precompute the rays for the training images. The NeRF architecture is 8 MLP layers with a skip connection at layer 5. The width is 256, and L_pos = 10, L_dir = 4 for the positional encoding. We have separate heads for density and RGB. For volume rendering, we use alpha compositing to accumulate colors along the ray using transmittance weighting.</p>
+            <img src="images/4.2.5.2.png" alt="image" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+            <img src="images/4.2.5.3.png" alt="image" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+            <img src="images/4.2.5.4.png" alt="image" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+            <img src="images/4.2.5.1.gif" alt="gif" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h2 class="task-title">Task 2.6 - Training with your own data</h2>  
+            <img src="images/4.2.6.1.gif" alt="gif" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+            <p>I did not need to make drastic code changes, the main thing was changing the near and far values so that the rays were being sampled from the right distances (using appropriate near and far values that I calculated).</p>
+            <img src="images/4.2.6.2.png" alt="image" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+            <img src="images/4.2.6.4.png" alt="image" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+            <img src="images/4.2.6.3.png" alt="image" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+    </div>
+</body>
+</html>
