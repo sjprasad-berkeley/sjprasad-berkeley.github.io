@@ -1,2 +1,2 @@
 # sjprasad-berkeley.github.io
-180 website
+COMPSCI 180 website
