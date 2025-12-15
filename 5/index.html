@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 5 - Fun With Diffusion Models!</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #0056b3;
+        }
+
+        .content {
+            max-width: 1400px;
+        }
+
+        .project-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-description {
+            color: #6c757d;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .part-header {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        .task-section {
+            margin-bottom: 3rem;
+        }
+
+        .task-title {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 0.5rem;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .image-item {
+            text-align: center;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-caption {
+            font-size: 0.8rem;
+            color: #6c757d;
+            margin-top: 0.5rem;
+            line-height: 1.3;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+    <div class="content">
+        <h1 class="project-title">Project 5</h1>
+        <p class="project-description">Fun With Diffusion Models!</p>
+
+        <h2 class="part-header">Part A: The Power of Diffusion Models!</h2>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 0: Text Prompts</h3>
+            <p>Random Seed: <strong>100</strong></p>
+            <h4>With 20 num_inference_steps</h4>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.0.1highquality.png" alt="High Quality Photo">
+                    <p class="image-caption">a high quality picture</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.0.1hipster.png" alt="Hipster">
+                    <p class="image-caption">a photo of a hipster barista</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.0.1oilpainting.png" alt="Oil Painting">
+                    <p class="image-caption">an oil painting of a snowy mountain village</p>
+                </div>
+            </div>
+            <h4>With 200 num_inference_steps</h4>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.0.2highquality.png" alt="High Quality Photo (Different Steps)">
+                    <p class="image-caption">a high quality picture</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.0.2hipster.png" alt="Hipster (Different Steps)">
+                    <p class="image-caption">a photo of a hipster barista</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.0.2oilpainting.png" alt="Oil Painting (Different Steps)">
+                    <p class="image-caption">an oil painting of a snowy mountain village</p>
+                </div>
+            </div>
+            <div class="answer-text">
+                The quality of the outputs is pretty good. They relate well to the prompts that they were based on, and don't have too many visual artifacts in them. When using a larger num_inference_steps value (20 vs 200), we see the image quality increase, but get more abstract, while maintaining the relevance to the prompt. It does take longer though.
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.1: Implementing the Forward Process</h3>
+            <p>Noisy Campanile at different noise levels (t = 250, 500, 750)</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.1.250.png" alt="Noisy Campanile t=250">
+                    <p class="image-caption">t=250</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.1.500.png" alt="Noisy Campanile t=500">
+                    <p class="image-caption">t=500</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.1.750.png" alt="Noisy Campanile t=750">
+                    <p class="image-caption">t=750</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.2: Classical Denoising</h3>
+            <p>Gaussian blur denoising results</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.2noisy.png" alt="Noisy Images">
+                    <p class="image-caption">Noisy Images (t=250, 500, 750)</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.2denoised.png" alt="Gaussian Blur Denoised">
+                    <p class="image-caption">Gaussian Blur Denoised</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.3: One-Step Denoising</h3>
+            <p>Using the pretrained diffusion model for one-step denoising</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.3.250.png" alt="One-Step Denoised t=250">
+                    <p class="image-caption">Denoised from t=250</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.3.500.png" alt="One-Step Denoised t=500">
+                    <p class="image-caption">Denoised from t=500</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.3.750.png" alt="One-Step Denoised t=750">
+                    <p class="image-caption">Denoised from t=750</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.4: Iterative Denoising</h3>
+            <p>Denoising progression and comparison</p>
+            <img src="images/5a.1.4.90.png" alt="Iterative Denoising Progression" style="width: 100%; max-width: 300px; margin-top: 1rem;">
+            <img src="images/5a.1.4.240.png" alt="Iterative Denoising Progression" style="width: 100%; max-width: 300px; margin-top: 1rem;">
+            <img src="images/5a.1.4.390.png" alt="Iterative Denoising Progression" style="width: 100%; max-width: 300px; margin-top: 1rem;">
+            <img src="images/5a.1.4.540.png" alt="Iterative Denoising Progression" style="width: 100%; max-width: 300px; margin-top: 1rem;">
+            <img src="images/5a.1.4.690.png" alt="Iterative Denoising Progression" style="width: 100%; max-width: 300px; margin-top: 1rem;">
+            <p class="image-caption">Denoising progression every 5th timestep</p>
+            <img src="images/5a.1.4blur.png" alt="Comparison" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+            <p class="image-caption">Comparison: Iterative Denoising, One-Step, Gaussian Blur</p>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.5: Diffusion Model Sampling</h3>
+            <p>5 sampled images from "a high quality photo"</p>
+            <img src="images/5a.1.5.png" alt="Sampled Images" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.6: Classifier-Free Guidance (CFG)</h3>
+            <p>5 sampled images with CFG scale of 7</p>
+            <img src="images/5a.1.6.png" alt="CFG Samples" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.7: Image-to-image Translation</h3>
+            <p>SDEdit results on the Campanile at different noise levels [1, 3, 5, 7, 10, 20]</p>
+            <img src="images/5a.1.7campanile.png" alt="Campanile SDEdit" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+
+            <h4>Test Images</h4>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.7colosseum.png" alt="Colosseum SDEdit">
+                    <p class="image-caption">Colosseum Edits</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7pyramids.png" alt="Pyramids SDEdit">
+                    <p class="image-caption">Pyramids Edits</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.7.1: Editing Hand-Drawn and Web Images</h3>
+            <h4>Web Images</h4>
+            <div class="image-gallery">
+                <img src="images/5a.1.7.1strawberry.png" alt="Strawberry Edits" style="width: 100%; max-width: 900px; margin-top: 1rem;">
+                <img src="images/5a.1.7.1strawberryoriginal.png" alt="Strawberry Original" style="width: 100%; max-width: 100px; margin-top: 1rem;">
+            </div>
+            
+            <h4>Hand-Drawn Images</h4>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.7.1banana.png" alt="Banana Drawing Edits">
+                    <p class="image-caption">Hand-drawn Banana</p>
+                    <img src="images/5a.1.7.1bananaoriginal.png" alt="Banana Original" style="max-width: 100px;">
+                    <p class="image-caption">Original Hand-drawn Banana</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7.1watermelon.png" alt="Watermelon Drawing Edits">
+                    <p class="image-caption">Hand-drawn Watermelon</p>
+                    <img src="images/5a.1.7.1watermelonoriginal.png" alt="Watermelon Original" style="max-width: 100px;">
+                    <p class="image-caption">Original Hand-drawn Watermelon</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.7.2: Inpainting</h3>
+            <p>Inpainting the top of the Campanile</p>
+            <img src="images/5a.1.7.2.1campanile.png" alt="Campanile Inpainting" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+
+            <h4>Custom Images</h4>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.7.2.1ocean.png" alt="Ocean Inpainting">
+                    <p class="image-caption">Ocean Scene</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7.2.1tokyo.png" alt="Tokyo Inpainting">
+                    <p class="image-caption">Tokyo Scene</p>
+                </div>
+            </div>
+
+            <h4>Additional Inpainting Results</h4>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.7.2.2campanile.png" alt="Campanile Inpainting 2">
+                    <p class="image-caption">Campanile</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7.2.2ocean.png" alt="Ocean Inpainting 2">
+                    <p class="image-caption">Ocean</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7.2.2tokyo.png" alt="Tokyo Inpainting 2">
+                    <p class="image-caption">Tokyo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.7.3: Text-Conditional Image-to-image Translation</h3>
+            <p>Edits of Campanile, Ocean, and Tokyo with text conditioning</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.7.3campanile.png" alt="Text-Conditional Campanile">
+                    <p class="image-caption">Campanile with Text Prompt: "a rocket ship"</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7.3ocean.png" alt="Text-Conditional Ocean">
+                    <p class="image-caption">Ocean with Text Prompt: "a stained glass window design"</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.7.3tokyo.png" alt="Text-Conditional Tokyo">
+                    <p class="image-caption">Tokyo with Text Prompt: "a futuristic city at night"</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.8: Visual Anagrams</h3>
+            <p>Images that change when flipped upside down</p>
+            <img src="images/5a.1.8.png" alt="Visual Anagrams" style="width: 100%; max-width: 600px; margin-top: 1rem;">
+            <p class="image-caption">An Oil Painting of an Old Man / An Oil Painting of People around a Campfire</p>
+            <img src="images/5a.1.8parrot.png" alt="Visual Anagrams" style="width: 100%; max-width: 600px; margin-top: 1rem;">
+            <p class="image-caption">A Colorful Parrot on a Branch / A Musician Playing Guitar</p>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.9: Hybrid Images</h3>
+            <p>Hybrid images using Factorized Diffusion</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5a.1.9.1.png" alt="Hybrid Image 1">
+                    <p class="image-caption">A Lithograph of a Waterfall / Skull</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5a.1.9.2.png" alt="Hybrid Image 2">
+                    <p class="image-caption">A Wooden Bridge over a Stream / Cat Sleeping on a Windowsill</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART B -->
+        <h2 class="part-header">Part B: Flow Matching from Scratch!</h2>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.2: Visualization of Noising Process</h3>
+            <p>Different noise levels applied to MNIST digits</p>
+            <img src="images/5b.1.2.png" alt="Noising Process" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.2.1: Training a Denoiser</h3>
+            <p>Training loss and denoising results after epochs 1 and 5</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5b.1.2.1loss.png" alt="Training Loss">
+                    <p class="image-caption">Training Loss Curve</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5b.1.2.1results.png" alt="Denoising Results">
+                    <p class="image-caption">Denoising Results (Epochs 1 & 5)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.2.2: Out-of-Distribution Testing</h3>
+            <p>Denoiser performance on different noise levels</p>
+            <img src="images/5b.1.2.2.png" alt="OOD Testing" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 1.2.3: Denoising Pure Noise</h3>
+            <p>Training to denoise pure Gaussian noise</p>
+            <br>
+            <div class="answer-text">
+                The generated outputs show a pattern where the model learns to predict what appears to be an average of all training digits. With an MSE loss, the model learns to predict the point that minimizes the sum of squared distances to all training examples, which results in blurry, averaged representations rather than distinct digits.
+            </div>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5b.1.2.3loss.png" alt="Pure Noise Training Loss">
+                    <p class="image-caption">Training Loss Curve</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5b.1.2.3results.png" alt="Pure Noise Results">
+                    <p class="image-caption">Results (Epochs 1 & 5)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 2.2: Training Time-Conditioned UNet</h3>
+            <p>Training loss curve for time-conditioned flow matching model</p>
+            <img src="images/5b.2.2.png" alt="Time-Conditioned Training Loss" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 2.3: Sampling from Time-Conditioned UNet</h3>
+            <p>Sampling results from epochs 1, 5, and 10</p>
+            <img src="images/5b.2.3.png" alt="Time-Conditioned Sampling" style="width: 100%; max-width: 1000px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 2.5: Training Class-Conditioned UNet</h3>
+            <p>Training loss curve for class-conditioned flow matching model</p>
+            <img src="images/5b.2.5.png" alt="Class-Conditioned Training Loss" style="width: 100%; max-width: 800px; margin-top: 1rem;">
+        </div>
+
+        <div class="task-section">
+            <h3 class="task-title">Part 2.6: Sampling from Class-Conditioned UNet</h3>
+            <p>Sampling 4 instances of each digit (0-9) with and without learning rate scheduler</p>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5b.2.6withall.png" alt="Class-Conditioned Sampling Results">
+                    <p class="image-caption">Training Progression</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5b.2.6with4.png" alt="Class-Conditioned Sampling Results">
+                    <p class="image-caption">Sampling 4 Examples per Digit</p>
+                </div>
+            </div>
+            <div class="image-gallery">
+                <div class="image-item">
+                    <img src="images/5b.2.6loss.png" alt="Comparison with/without Scheduler">
+                    <p class="image-caption">Training Loss: With vs Without Scheduler</p>
+                </div>
+                <div class="image-item">
+                    <img src="images/5b.2.6without4.png" alt="Class-Conditioned Sampling Results">
+                    <p class="image-caption">Sampling 4 Examples per Digit (Without Scheduler)</p>
+                </div>
+            </div>
+            <div class="answer-text">
+                After removing the exponential learning rate scheduler and using a constant learning rate of 1e-4, the model maintains similar performance, so I did not need to do anything to compensate. The training remains stable and the generated digits are of comparable quality. This suggests that with proper hyperparameter tuning, a constant learning rate can work just as well for this task.
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
